@@ -1,0 +1,6 @@
+<h1><%= @dog.name %></h1>
+<h4>"<%= @dog.motto %>"</h4>
+
+
+
+<%= link_to 'Remove', @dog, method: :delete, data: { confirm: 'Are you sure?' } %>

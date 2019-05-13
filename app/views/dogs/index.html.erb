@@ -1,0 +1,18 @@
+
+<h1>Listing all Dog</h1>
+
+<p>
+
+<%= link_to "Create a New Dog", new_dog_path %>
+
+</p>
+
+<table>
+  <% @dogs.each do |dog| %>
+    <tr>
+      <td><%= link_to dog.name, dog_path(dog) %></td>
+      <td><%= link_to dog.motto, dog_path(dog) %></td>
+      <td><%= button_to 'Edit', edit_dog_path(dog), method: 'get'%></td>
+      <td><%= button_to 'Remove', dog_path(dog), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
+  <% end %>
+</table>

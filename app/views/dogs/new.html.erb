@@ -1,0 +1,19 @@
+<h3>Create a Dog</h3>
+<% if @dog.errors.any? %>
+
+<h2>The following errors prevented the article from getting created</h2>
+<ul>
+<% @dog.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+</ul>
+<% end %>
+<%= form_with model: @dog do |form| %>
+  <%= form.label :title %><br/>
+  <%= form.text_field :name, placeholder: "title" %><br/>
+  <br/>
+  <%= form.label :description %><br/>
+  <%= form.text_area :motto, placeholder: "description" %>
+  <br/>  <br/>
+  <%= form.submit %>
+<% end %>
