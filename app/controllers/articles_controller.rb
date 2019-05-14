@@ -9,10 +9,10 @@ before_action :set_article, only: [:edit, :update, :show, :destroy]
   def edit
   end
   def create
-    @article = Article.new(dog_params)
- if @article.save
+    @articles = Article.new(dog_params)
+ if @articles.save
 flash[:notice] = "Article was successfully created"
- redirect_to article_path(@article)
+ redirect_to article_path(@articles)
 else
 render 'new'
 end

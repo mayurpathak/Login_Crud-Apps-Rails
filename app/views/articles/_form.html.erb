@@ -8,7 +8,7 @@
 <% end %>
 
 
-<%= form_with model: @articles do |form| %>
+<%= form_for  @articles do |form| %>
 <p>
 <%= form.label :title %><br/>
 <%= form.text_field :title %>
