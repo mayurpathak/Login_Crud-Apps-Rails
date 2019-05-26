@@ -1,0 +1,26 @@
+$navbar-default-bg: #B0C4DE;
+
+// @import "bootstrap-sprockets";
+// @import "bootstrap";
+@import "bootstrap-sprockets";
+
+@import "bootstrap";
+
+#logo{
+  float: left;
+  font-size: 1.7em;
+  color: #F015D2;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo:hover{
+  color: #fff;
+  text-decoration: none;
+}
+.jumbotron{
+  //background-image: asset-url('BackGround.jpg');
+  background-size: cover;
+  height: 100px;
+}
