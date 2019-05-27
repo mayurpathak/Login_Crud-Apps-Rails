@@ -11,7 +11,7 @@ before_action :set_article, only: [:edit, :update, :show, :destroy]
   def create
     @articles = Article.new(dog_params)
  if @articles.save
-flash[:notice] = "Article was successfully created"
+flash[:success] = "Article was successfully created"
  redirect_to article_path(@articles)
 else
 render 'new'
@@ -19,7 +19,7 @@ end
 end
 def update
 if @articles.update(dog_params)
-flash[:notice] = "Article was Update successfully"
+flash[:success] = "Article was Update successfully"
 redirect_to articles_path(@articles)
 else
 render 'edit'
@@ -33,7 +33,7 @@ end
 
   def destroy
       @articles.destroy
-  flash[:notice] = "Article was successfully deleted"
+  flash[:danger] = "Article was successfully deleted"
       redirect_to articles_path
     end
 
