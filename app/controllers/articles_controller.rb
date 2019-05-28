@@ -9,7 +9,9 @@ before_action :set_article, only: [:edit, :update, :show, :destroy]
   def edit
   end
   def create
+    debugger
     @articles = Article.new(dog_params)
+    @articles.user = User.first
  if @articles.save
 flash[:success] = "Article was successfully created"
  redirect_to article_path(@articles)
