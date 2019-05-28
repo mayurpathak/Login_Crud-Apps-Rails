@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # get 'dogs/show'
   # get 'dogs/new'
   # get 'dogs/edit'
-  resources :dogs
+  #resources :dogs
   resources :articles
 get 'signup', to: 'users#new'
 resources :users, except: [:new]
