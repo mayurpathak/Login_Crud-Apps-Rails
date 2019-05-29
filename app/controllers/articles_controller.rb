@@ -9,7 +9,6 @@ before_action :set_article, only: [:edit, :update, :show, :destroy]
   def edit
   end
   def create
-    debugger
     @articles = Article.new(dog_params)
     @articles.user = User.first
  if @articles.save
