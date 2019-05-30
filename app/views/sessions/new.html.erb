@@ -1,5 +1,12 @@
-<h1 align="center">Log in</h1>
+<style >
+.center{
+    text-align :center;
+  }
 
+</style>
+
+<h1 align="center">Log in</h1>
+<div class="login">
 <%= form_for(:session, :html => {class: "form-horizontal", role: "form"}, url: login_path) do |form| %>
 <div class="form-group">
     <div class="control-label col-md-2">
@@ -26,4 +33,5 @@
 <% end %>
 <div class="col-xs-4 col-xs-offset-4">
 [ <%= link_to "cancle request and return To article Listing", articles_path %> ]
+</div>
 </div>

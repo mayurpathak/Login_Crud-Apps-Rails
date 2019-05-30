@@ -3,25 +3,24 @@
     text-align :center;
   }
 .jumbotron{
-     /* background-image: asset-url('BackGround.jpg'); */
-     background-color: black;
-     background-size: cover;
-     height: 400px;
+    background-image: url(/assets/laptop_room_on_the_desk_keyboard_mouse_apple_window_interior_73963_1680x1050.jpg);
+    background-size: cover;
+    height: 700px;
   }
   .jumbotron h1{
-    color:#fff;
-    text-align:center;
+    color: #F7F9F9;
     margin-bottom:30px;
     letter-spacing: -1px;
     font-weight: bold;
   }
   .btn-xlarge{
     font-size: 1.7em;
-    background-color: black;
+    background-color: #337ab7;
+    border-color: #2e6da4;
   }
 </style>
 
-<div class="center jumbotron">
+<div class="jumbotron">
   <h1>ALPHA BLOG</h1>
   <%= link_to 'Sign up now', signup_path, class:"btn btn-danger btn-lg btn-xlarge" %>
 </div>
