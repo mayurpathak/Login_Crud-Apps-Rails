@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   # get 'users/index'
   # get 'users/show'
   # get 'users/new'
@@ -16,5 +17,8 @@ Rails.application.routes.draw do
   resources :articles
 get 'signup', to: 'users#new'
 resources :users, except: [:new]
+get 'login', to: 'sessions#new'
+post 'login', to: 'sessions#create'
+delete 'logout', to: 'sessions#destory'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
