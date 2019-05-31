@@ -35,7 +35,7 @@ padding-top: 5px;
 <hr>
 <%= simple_format(@articles.description) %>
 <div class="article-actions">
-  <% if logged_in? && current_user == @articles.user %>
+  <% if logged_in? && (current_user == @articles.user || current_user.admin?) %>
               <%= link_to "Edit this article", edit_article_path(@articles), class: "btn btn-xs btn-primary" %>
               <%= link_to "Delete this article", article_path(@articles), method: :delete,
                                   data: {confirm: "Are you sure delete the article ?"},
