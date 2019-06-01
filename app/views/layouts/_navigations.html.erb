@@ -5,16 +5,22 @@
 #logo{
   float: left;
   font-size: 1.7em;
-  color: #fff;
+  color: #DF4A3A;
   text-transform: uppercase;
   letter-spacing: -1px;
   font-weight: bold;
 }
-
+#user{
+  color: #DF4A3A;
+}
+#comman{
+  color: #fff;
+}
 #logo:hover{
-  color: #337ab7;
+  color: #F39A90;
   text-decoration: none;
 }
+
 </style>
 
 
@@ -35,13 +41,13 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
 
-        <li class="active"><%= link_to "Article", articles_path %></li>
-        <li><%= link_to "Users", users_path %></li>
+        <li class="active"><%= link_to "Article", articles_path%></li>
+        <li class="user"><%= link_to "Users", users_path, id: "user" %></li>
           <% if logged_in? %>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" style="color:#FFF;" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><%= link_to "New Article", new_article_path %></li>
+              <li><%= link_to "New Article", new_article_path  %></li>
               <li><a href="#">Another action</a></li>
               <li><a href="#">Something else here</a></li>
               <li role="separator" class="divider"></li>
@@ -60,9 +66,9 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
-            <li><%= link_to "Log out", logout_path, method: :delete %></li>
+            <li><%= link_to "Log out", logout_path, method: :delete, id: "comman" %></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+              <a href="#" class="dropdown-toggle" style="color:#FFF;" data-toggle="dropdown" role="button"
               aria-haspopup="true" aria-expanded="false">Your Profile <%= "Admin" if current_user.admin? %><span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
@@ -73,8 +79,8 @@
               </ul>
             </li>
             <% else %>
-            <li><%= link_to "Login", login_path %></li>
-            <li><%= link_to "Sign up", signup_path %></li>
+            <li><%= link_to "Login", login_path, id: "comman" %></li>
+            <li><%= link_to "Sign up", signup_path, id: "comman" %></li>
             <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
