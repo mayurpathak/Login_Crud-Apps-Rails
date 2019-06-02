@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  # get 'password_resets/new'
   # get 'users/index'
   # get 'users/show'
   # get 'users/new'
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
   # get 'dogs/new'
   # get 'dogs/edit'
   #resources :dogs
+  resources :password_resets
   resources :articles
 get 'signup', to: 'users#new'
 resources :users, except: [:new]
