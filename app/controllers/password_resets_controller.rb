@@ -10,7 +10,7 @@ class PasswordResetsController < ApplicationController
   user = User.find_by_email(params[:email])
   user.send_password_reset if user
   flash[:success] = 'E-mail sent with password reset instructions.'
-  redirect_to edit_password_reset_path(user.password_reset_token)
+  redirect_to edit_password_reset_path(@user.password_reset_token)
 end
 
 def update
