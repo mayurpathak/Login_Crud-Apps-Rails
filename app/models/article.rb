@@ -4,3 +4,11 @@ validates :title, presence: true, length: {minimum: 3, maximum: 50 }
 validates :description, presence: true, length: {minimum: 5, maximum: 300 }
 validates :user_id, presence: true
 end
+
+def self.search(search)
+  if search
+    where("title like ?", "%#{search}%")
+  else
+    find(:all)
+  end
+end

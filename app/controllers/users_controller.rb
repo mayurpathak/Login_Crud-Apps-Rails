@@ -3,7 +3,11 @@ class UsersController < ApplicationController
   before_action :require_same_user, only: [:edit, :update, :destroy]
   before_action :require_admin, only: [:destroy]
   def index
-    @users = User.all
+    if params[:search]
+      @users = User.search(params[:search])
+      else
+      @users = User.all
+    end
   end
 
   def show

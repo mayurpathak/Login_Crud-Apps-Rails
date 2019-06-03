@@ -7,6 +7,14 @@ before_save { self.email = email.downcase }
  format: { with: VALID_EMAIL_REGEX }
  has_secure_password
 
+ def self.search(search)
+   if search
+     where("username like ?", "%#{search}%")
+   else
+     find(:all)
+   end
+ end
+
  def send_password_reset
   generate_token(:password_reset_token)
   self.password_reset_sent_at = Time.zone.now
