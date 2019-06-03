@@ -9,7 +9,7 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
   # Configure default URL for action mailer
-  config.action_mailer.default_url_options = {:host =>'localhost:3000'}
+  config.action_mailer.default_url_options = {:host =>'https://whispering-ravine-86228.herokuapp.com'}
   # Show full error reports.
   config.consider_all_requests_local = true
 
