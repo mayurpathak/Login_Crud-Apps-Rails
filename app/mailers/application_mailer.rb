@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'https://whispering-ravine-86228.herokuapp.com'
+  default from: 'from@example.com'
   layout 'mailer'
 end
