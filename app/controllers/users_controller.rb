@@ -30,6 +30,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      UserMailer.test_send(@user.email).deliver_now
       session[:user_id] = @user.id
       flash[:success] = "successfully Signup Welcome To #{@user.username}"
       redirect_to user_path(@user)

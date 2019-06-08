@@ -10,6 +10,13 @@ Rails.application.configure do
   config.eager_load = false
   # Configure default URL for action mailer
   config.action_mailer.default_url_options = {:host =>'https://whispering-ravine-86228.herokuapp.com',  :protocol => 'https' }
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.perform_deliveries = true
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
+config.action_mailer.default_url_options = {:host => "localhost", :port => '3000', :protocol => "http"}
+config.action_mailer.preview_path = "#{Rails.root}/tmp/mailers/previews"
+config.cache_store = :redis_store, 'redis://localhost:6379/'
   # Show full error reports.
   config.consider_all_requests_local = true
 

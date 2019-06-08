@@ -8,7 +8,7 @@
             <%= form.label :username %>
         </div>
         <div class="col-sm-8">
-          <%= form.text_field :username, class: "form-control", placeholder: "Enter Username", autofocus:true %>
+          <%= form.text_field :username, class: "form-control txtName", placeholder: "Enter Username", autofocus:true %>
         </div>
       </div>
       <div class="form-group">
@@ -25,6 +25,14 @@
                   </div>
                   <div class="col-sm-8">
                     <%= form.password_field :password, class: "form-control", placeholder: "Enter Password"%>
+                  </div>
+          </div>
+          <div class="form-group">
+                <div class="control-label col-md-2">
+                    <%= form.label :confirmpassword %>
+                  </div>
+                  <div class="col-sm-8">
+                    <%= form.password_field :password_confirmation, class: "form-control", placeholder: "Enter Confirm Password"%>
                   </div>
           </div>
           <div class="form-group">
@@ -56,3 +64,14 @@
     </div>
 </div>
 </div>
+<script>
+    $( document ).ready(function() {
+      debugger
+        $( ".txtName" ).keypress(function(e) {
+            var key = e.keyCode;
+            if (key >= 48 && key <= 57) {
+                e.preventDefault();
+            }
+        });
+    });
+</script>

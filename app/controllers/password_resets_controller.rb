@@ -12,8 +12,8 @@ class PasswordResetsController < ApplicationController
   UserMailer.forgot_password(user).deliver_now
   flash[:success] = edit_password_reset_url(user.password_reset_token)
   flash[:danger] = 'This Link copy and paste In Url'
-  redirect_to new_password_reset_path
-  # redirect_to edit_password_reset_path(user.password_reset_token)
+  # redirect_to new_password_reset_path
+ redirect_to edit_password_reset_path(user.password_reset_token)
 end
 
 def update

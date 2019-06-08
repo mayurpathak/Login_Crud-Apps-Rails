@@ -11,4 +11,9 @@ default :from => "mayurpathak888@gmail.com"
 
    mail to: user.email, :subject => 'Reset password instructions'
   end
+
+  def test_send(email)
+  @email = email
+  mail(to: @email, subject: 'Test Send')
+end
 end
