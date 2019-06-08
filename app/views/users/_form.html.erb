@@ -48,7 +48,7 @@
                     <%= form.label :dateofbirth %>
                   </div>
                   <div class="col-sm-8">
-                    <%= form.date_field :dateofbirth, class: "form-control", placeholder: "Enter Address"%>
+                    <%= form.date_field :dateofbirth, type:"date", class: "form-control", placeholder: "Enter Address"%>
                   </div>
           </div>
 
@@ -75,3 +75,17 @@
         });
     });
 </script>
+<style>
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+</style>
