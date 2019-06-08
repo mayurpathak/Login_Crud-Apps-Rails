@@ -24,7 +24,7 @@
                     <%= form.label :password %>
                   </div>
                   <div class="col-sm-8">
-                    <%= form.password_field :password, class: "form-control", placeholder: "Enter Password"%>
+                    <%= form.password_field :password, class: "form-control", id:"pwd", placeholder: "Enter Password"%>
                   </div>
           </div>
           <div class="form-group">
@@ -32,7 +32,7 @@
                     <%= form.label :confirmpassword %>
                   </div>
                   <div class="col-sm-8">
-                    <%= form.password_field :password_confirmation, class: "form-control", placeholder: "Enter Confirm Password"%>
+                    <%= form.password_field :password_confirmation, class: "form-control", id:"cmpassword", placeholder: "Enter Confirm Password"%>
                   </div>
           </div>
           <div class="form-group">
@@ -73,6 +73,17 @@
                 e.preventDefault();
             }
         });
+    });
+    $("#cmpassword").on('change', function() {
+      var password = document.getElementById("pwd").value;
+      var confirmPassword = document.getElementById("cmpassword").value;
+      if (password != confirmPassword) {
+          alert("Passwords do not match.");
+          $('#cmpassword').focus();
+          $('#cmpassword').val("");
+          return false;
+      }
+      return true;
     });
 </script>
 <style>
