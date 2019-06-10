@@ -9,7 +9,7 @@ default :from => "mayurpathak888@gmail.com"
     @user = user
    @greeting = "Hi"
 
-   mail to: user.email, :subject => 'Reset password instructions'
+   mail to: @user.email, :subject => 'Reset password instructions'
   end
 
   def test_send(email)

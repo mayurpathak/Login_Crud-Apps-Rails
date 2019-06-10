@@ -4,14 +4,14 @@ before_save { self.email = email.downcase }
 attr_accessor :password_confirmation
 # attr_accessible :username
 # attr_protected :password
-VALID_USERNAME_REGEX = /\^[A-Z]+\$/i
- validates :username, presence: true, uniqueness: { case_sensitive: false }, length: { minimum: 3, maximum: 25 },
- format: { with: VALID_USERNAME_REGEX }
+# VALID_USERNAME_REGEX = /\^[A-Z]+\$/i
+ validates :username, presence: true, uniqueness: { case_sensitive: false }, length: { minimum: 3, maximum: 25 }
+ # format: { with: VALID_USERNAME_REGEX }
  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
  validates :email, presence: true, length: {maximum: 100}, uniqueness: { case_sensitive: false },
  format: { with: VALID_EMAIL_REGEX }
  has_secure_password
- validates_confirmation_of :password 
+ validates_confirmation_of :password
 
  def self.search(search)
    if search
