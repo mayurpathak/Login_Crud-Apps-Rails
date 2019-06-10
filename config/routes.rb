@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   # get 'dogs/new'
   # get 'dogs/edit'
   #resources :dogs
-  get '/:token/forgot_password/', :to => "password_resets#edit_user", as: 'edit_user'
+  get '/:token/forgot_password/', :to => "password_resets#edit_user"
   resources :password_resets
   resources :articles
 get 'signup', to: 'users#new'
